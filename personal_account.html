@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Личный кабинет</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="jquery-3.7.1.js" ></script>
+        <script src="lk.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-info">
+        <header class="bg-blue-light p-auto text-center main-color text-color-bezh font-h2">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <img src="./images/logoHeader.png" style="max-height: 100px;" alt="logotip"> 
+                    <h1 class="fw-bold ps-3 obvodka">Moscow Adventure</h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto pe-3 ">
+                          <li>
+                            <a class="nav-link my-nav" aria-current="page" href="#marshruts">Просмотр заявок</a>
+                          </li>
+                          <li>
+                            <a class="nav-link my-nav" href="index.html">На главную</a>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="navbar-expand-lg bg-info font height" style="--bs-bg-opacity: .5;">
+            <h3 class="fw-bold obvodka text-center">Личный кабинет</h3>
+            <div class="row" >
+                <div class="col-12">
+                    <table class="table text-center table-info">
+                        <thead>
+                        <tr>
+                            <th class="fw-bold text-center">№</th>
+                            <th class="fw-bold text-center">Название маршрута</th>
+                            <th class="fw-bold text-center">Дата</th>
+                            <th class="fw-bold text-center">Стоимость</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="tablelk">
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination row">
+                          
+                        </ul>
+                      </nav>
+                </div>
+            </div>
+            <div id="viewApplication">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div >
+                                    <p id="numberApplication"></p>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="col-6">
+                                            <p>Название маршрута</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="marshrutNameView"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Имя гида</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="guidNameView"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Дата</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="dataJS"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <label>Время начала</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="timeJS"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Длительность экскурсии</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="durationJS"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Количество человек</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="quantityJS"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Дополнительные опции:</p>
+                                        </div>
+                                        <div class="col-6"></div>
+                                        <div class="col-6">
+                                            <p>Опция 1. Быстрый выезд гида</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="option1Status"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Описание опции</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Гид приедет к вам в течение часа</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Опция 2. Трансфер</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="option2Status"></p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Описание опции</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Трансфер до ближайших станций метро после экскурсии</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Размер надбавки:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="differenceJS"> </p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p>Итоговая стоимость:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p id="totalCostView"></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="example2ModalLabel" aria-hidden="true"> 
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Удаление</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Вы уверены, что хотите удалить заявку?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Нет</button>
+                      <button id="agree" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="deleteApplicationModal()" >Да</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </main>
+        <footer class="bg-black text-black py-3 bottom">
+            <p class="text-center text-light">Прокуров Артемий 221-365</p>
+        </footer>
+    </body>
+</html>

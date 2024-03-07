@@ -1,0 +1,128 @@
+.bg-warning-subtl{
+    background-color: rgb(97, 35, 35);
+}
+
+.bg-input-table{
+    background-color: #f3e307;
+}
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    width: 100%;
+}
+
+.height{
+    height: 100%;
+}
+
+.inviz{
+    color: #80806300;
+}
+
+.text-color{
+    color: rgb(97, 35, 35);
+}
+
+.font{
+    font-family: book antiqua;
+}
+
+.main-color {
+    background-color: #ffdada;
+}
+
+.textRotate{
+    text-align: justify;
+}
+
+.img-rotation{
+    display: inline-block;
+}
+
+.text-color-bezh {
+    color: rgb(233, 86, 7);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.obvodka {
+    -webkit-text-stroke: 0.7px #441c09;
+}
+
+html, main{
+    height: 100%;
+}
+
+.widthGuid{
+    width: 10%;
+}
+
+
+
+.font-h2 {
+    font-family: 'bookman old style';
+    text-align: center;
+}
+
+.my-nav {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: book antiqua;
+    color: #3f1606;
+}
+
+.locations {
+    margin: auto;
+    width: 20%;
+}
+
+.map-section {
+    margin: 3% 7%;
+    padding: 5px;
+}
+
+.map {
+    margin: 10px 0px 0px 0 px; 
+    width: 100%; 
+    height:400px;
+}
+
+.marshruts {
+    margin: 3% 7%;
+
+}
+
+.table {
+    border: 1px solid grey;
+    width: 100%; 
+}
+
+.table-gids{
+    width: 75%;
+}
+
+.pagination-center{
+    text-align: center;
+}
+
+.table-div {
+    margin: 10px 0px 0px 0 px; 
+}
+
+.div-gids{
+    margin: 3% 7%;
+}
+
+.hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }

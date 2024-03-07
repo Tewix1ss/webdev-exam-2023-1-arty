@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>exam</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"/>
+        <link rel="stylesheet" href="style.css">
+        <script src="jquery-3.7.1.js" ></script>
+        <script src="main.js" defer></script>
+        <script type="text/javascript" src="http://maps.api.2gis.ru/1.0"></script>
+        <script type="text/javascript">
+            DG.autoload(function() {
+                var myMap = new DG.Map('myMapId');
+                myMap.setCenter(new DG.GeoPoint(55.7522, 37.6156), 15);
+                myMap.controls.add(new DG.Controls.Zoom());
+            });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="bg-blue-light p-auto text-center main-color text-color-bezh font">
+            <nav class="navbar navbar-expand-lg ">
+                <div class="container-fluid">
+                    <img src="./images/logoHeader.png" style="max-height: 100px;" class="img-fluid" alt="logotip"> 
+                    <h1 class="fw-bold obvodka text-center">Moscow Adventure</h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto pe-3 ">
+                          <li>
+                            <a class="nav-link my-nav" aria-current="page" href="#marshruts">Просмотр маршрутов</a>
+                          </li>
+                          <li>
+                            <a class="nav-link my-nav" href="personal_account.html" >Личный кабинет</a>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="bg-info font pb-2" style="--bs-bg-opacity: .5;">
+            <section class="pt-3 fw-bold">
+                <div class="container text-center bg-success" style="border-radius: 2em; width: 70%; --bs-bg-opacity: .5;">        
+                    <div class="alerts">
+                        <div class="alert" alert-primary alert-dismissible>0 НОВЫХ СООБЩЕНИЙ
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main-color text-color-bezh fw-bold">
+                <div class="container-fluid">
+                    <div class="p-3">
+                        <div class="row">
+                            
+                            <div class="col-md-6 text-center">
+                                <p></p>
+                                <img src="./images/logo.jpg" class="img-fluid" alt="logo">
+                            </div>
+                            <div class="col-md-6 text-center text-lg-start px-5 pb-5 pb-lg-0">
+                                <h2 class="fw-bold font-h2 obvodka">Moscow Adventure</h2>
+                                <p class="textRotate">"Компания "Moscow Adventure" - Ваш проводник в мире захватывающих туристических маршрутов по Москве. Мы специализируемся на организации увлекательных экскурсий и путешествий по самым интересным достопримечательностям столицы России. Наша команда профессиональных гидов и организаторов туров создаст для вас незабываемые впечатления от знакомства с историей, культурой и архитектурой Москвы. Независимо от ваших предпочтений - будь то классические экскурсии, тематические маршруты, туры для иностранных туристов или корпоративные мероприятия - мы гарантируем высокое качество обслуживания и уникальный опыт путешествия. Доверьте нам свое время и откройте Москву вместе с "Московод!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container text-color mb-5 text-center">
+                    <h2 class="text-color-bezh obvodka text-center my-3">Почему мы?</h2>
+                    <div class="row flex-row pb-5">
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Экспертное знание</h5>
+                            <p>Компания имеет экспертное знание о Москве, ее истории, культуре и достопримечательностях, что позволяет предоставлять информативные и интересные экскурсии</p>
+                        </div>
+                        
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Индивидуальный подход</h5>
+                            <p>Туристическая компания может предложить персонализированный подход к путешествию, учитывая предпочтения и интересы каждого клиента.</p>
+                        </div>
+                    
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Доступ к уникальным местам</h5>
+                            <p>Благодаря своему опыту и связям, компания может предложить доступ к уникальным и закрытым для общества местам в Москве.</p>
+                        </div>
+                    
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Профессиональные гиды</h5>
+                            <p>Квалифицированные и опытные гиды обеспечивают информативные и увлекательные экскурсии, делая поездку более познавательной</p>
+                        </div>
+                    </div>
+                    <div class="row">    
+                            <div class="col-sm">
+                            <h5 class="fw-bold">Удобство и комфорт</h5>
+                            <p>Компания может обеспечить удобные условия путешествия, включая транспорт, размещение и питание</p>
+                        </div>
+                        
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Инновационные технологии</h5>
+                            <p>Использование современных технологий, таких как мобильные приложения или интерактивные карты, может улучшить опыт туриста и сделать поездку более увлекательной</p>
+                        </div>
+                        
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Гарантированная безопасность</h5>
+                            <p>Компания обеспечивает безопасность туристов, предпринимая все необходимые меры для обеспечения безопасности во время экскурсий</p>
+                        </div>
+                        
+                        <div class="col-sm">
+                            <h5 class="fw-bold">Широкий выбор туров</h5>
+                            <p>Компания предлагает разнообразные туры и маршруты, чтобы удовлетворить различные потребности и интересы клиентов</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="map-section bg-warning-subtle fw-bold">
+                <div class="map-place text-center fw-bold">
+                    <p>Откуда вы хотите начать путешествие:</p>
+                    <input type="text" class=" bg-warning-subtle" id="address from" name="address from">
+                    <div class="button m-1" >
+                        <button class="text-center btn bg-success m-2" style="border-radius: 2em; --bs-bg-opacity: .5;">Начать</button>
+                    </div>
+                    <div id="myMapId" style="margin: 10px 0px; width: 100%; height:400px"></div>
+                </div>
+            </section>
+            <section class="container mt-5" id="marshruts">
+                <h4 class="fw-bold obvodka text-center ">
+                    Список пешеходных маршрутов
+                </h4>
+                <div class="row text-center">
+                    <div class="col-6 text-center text-center">
+                        <p> Поиск по названию</p>
+                        <input id="nameMarshrut" type="text" class="form-control w-100 bg-warning-subtle">
+                    </div>
+                    <div class="col-6 text-center text-center">
+                        <p> Поиск по объектам</p>
+                        <select name="variant" class="form-control w-70 bg-warning-subtle"></select>
+                    </div>
+                    <div class="col text-center">
+                        <button type="button" id="button-search" class="text-center btn bg-success m-2" style="border-radius: 2em; --bs-bg-opacity: .5;">Найти</button>
+                    </div>
+                </div>
+                <article class="content">
+                    <div class="row" >
+                        <div class="col-12">
+                            <table class="table table-info text-center">
+                                <thead>
+                                <tr>
+                                    <th class="fw-bold text-center">Название маршрута</th>
+                                    <th class="fw-bold text-center">Описание</th>
+                                    <th class="fw-bold text-center">Места посещения</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody id="table1">
+                                </tbody>
+                            </table>
+                            <div class="text-center">
+                                <ul class="pagination justify-content-center" id="pagination"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="fw-bold container mt-1">
+                <div class="div-gids pb-2" id="infoAboutGuids">
+                    <p id="addNameMarshrut"></p>
+                    <div id="placeGuidProperties">
+                    </div>
+                    <div class="table-div table-info" id="gidsTable">
+                    </div>
+                </div>
+            </section>
+            <div id="createApplication" class="fw-bold">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-primary-subtle">
+                            <div class="modal-header">
+                            <h2 class="modal-title fs-5" id="exampleModalLabel" >Оформление заявки</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row row-cols-2">
+                                        <div class="col my-1">
+                                            <p>Название маршрута</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p id="marshrut_name"></p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p>Имя гида</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p id="guid_name"></p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <label>Выберите дату</label>
+                                        </div>
+                                        <div class="col my-1">
+                                            <input type="date" id="weekDay" class="bg-info" style="--bs-bg-opacity: .08;" value="2024-03-07">
+                                            <p id="warningData"></p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <label>Время начала</label>
+                                        </div>
+                                        <div class="col my-1">
+                                            <input type="time" id="timeAppointment" class="bg-info" style="--bs-bg-opacity: .08;" name="timeAppointment" step="1800" min="09:00" max="23:00" value="09:00"/>
+                                            <p id="warningTime"></p>
+                                            <p id="warningTimePrice"></p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p>Длительность экскурсии</p>
+                                        </div>
+                                        <div class="col my-1" >
+                                            <select id="hourCount" class="bg-info" style="--bs-bg-opacity: .08;">
+                                                <option value="1">1 час</option>
+                                                <option value="2">2 часа</option>
+                                                <option value="3">3 часа</option>
+                                            </select>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p>Количество человек</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <input class="bg-info" style="--bs-bg-opacity: .08;" id="countPeople" type="number" value="1" max="20" min="1"/>
+                                        </div>
+                                    </div>
+                                    <h6 class="text-center">Дополнительные опции</h6>
+                                    <div class="row row-cols-2">
+                                        <div class="col my-1">
+                                            <p class="fw-bold">Еда во время экскурсии:</p>
+                                            <p>Легкие закуски и горячие напитки во время экскурсии</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <input class="bg-warning-subtle" type="checkbox" id="option1"/>
+                                            <label>Выбрать</label>
+                                            <p>     + 1000р за человека</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p class="fw-bold">Сопровождение сурдопереводчика:</p>
+                                            <p>Дополнительно к экскурсоводу будет приставлен сурдопереводчик</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <input class="bg-warning-subtle" type="checkbox" id="option2"/>
+                                            <label>Выбрать</label>
+                                            <p>     + 15% к итоговой стоимости от группы до 5 человек</p>
+                                            <p>     + 25% к итоговой стоимости от группы до 10 человек</p>
+                                            <p>     Максимальная вместимость группы с включенной опцией - 10 человек</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p>Итоговая стоимость:</p>
+                                        </div>
+                                        <div class="col my-1">
+                                            <p id="totalCost"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="modal-footer">
+                            <p class="inviz" id="guidIdData"></p>
+                            <p class="inviz" id="marshrutIdData"></p>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                            <button type="button" class="btn btn-primary" onclick="sendApplication()" data-bs-dismiss="modal">Отправить</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-black text-black py-3">
+            <p class="text-center text-light">Прокуров Артемий 221-365</p>
+        </footer>
+    </body>
+</html>
