@@ -1,4 +1,3 @@
-// создание таблицы с заявками
 function lkTable() {
     fetch("http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=3998032f-4281-4dc1-a312-42ff9d880281")
         .then(function(response) {
@@ -35,7 +34,6 @@ function lkTable() {
                     tablelk.innerHTML = out;
                 })
     }})}
-// Просмотр заявки
 function viewApplicationModal(clicked_id){
     let applicationId = clicked_id;
     fetch("http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/orders?api_key=3998032f-4281-4dc1-a312-42ff9d880281")
@@ -99,7 +97,6 @@ function viewApplicationModal(clicked_id){
                         
                     }}})}
 }})}
-// удаление заявки 
 function deleteApplicationModal(){
     deleteButton = document.getElementById('deleteButton');
     idApplication = deleteButton.getAttribute('data-id');
@@ -110,7 +107,6 @@ function deleteApplicationModal(){
         .then(data => console.log(data))
         .catch(error => alert('Такой записи не найдено. Возможно, Вы её уже удалили, обновите страницу'));
 }
-// запуск функции создания таблицы при загрузке страницы
 window.onload = function () {
     lkTable();
     let agreeBtn = document.getElementById('agree');

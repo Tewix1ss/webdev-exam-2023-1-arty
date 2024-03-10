@@ -1,4 +1,4 @@
-// Создание таблицы с маршрутами
+
 function createTable() {
     fetch("http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/routes?api_key=3998032f-4281-4dc1-a312-42ff9d880281")
         .then(function(response) {
@@ -10,7 +10,7 @@ function createTable() {
             let out = "";
             let rowsPerPage = 10;
             let currentPage = 1;
-// работа с таблицей, пагинация
+
             function renderTable() {
                 let start = (currentPage - 1) * rowsPerPage;
                 let end = start + rowsPerPage;
@@ -45,12 +45,11 @@ function createTable() {
             }
             renderTable();
             })
-// важно сказать, что предусмотрена ошибка подкл.
+
         .catch(error => alert('Ошибка подключения к серверу'));
         
     }
-
-// Добавление имени маршрута по нажатию и открытие таблицы гидов из этого маршрута 
+ 
 function addMarshrutName(clicked_id){
     let marshrutAddId = clicked_id;
     let secretMarshrutPlace = document.getElementById('marshrutIdData');
@@ -111,10 +110,8 @@ function showGuids(clicked_id) {
         out += `</table>`
         table2.innerHTML = out;
     })
-// важно сказать, что ошибка предусмотрена
     .catch(error => alert('Ошибка подключения к серверу'));
 }
-//Список языков для выбора маршрута в виде выпадающего списка
 function listLanguages(clicked_id){
     let marshrutId = clicked_id;
     let languagePlace = document.querySelector('#placeGuidProperties')
@@ -137,7 +134,6 @@ function listLanguages(clicked_id){
         filterLanguages(marshrutId)
     })
 }
-// функция фильтрации языков в таблице
 function filterLanguages(marshrutId){
     let idForTable = marshrutId;
     let languageSelectPlace = document.querySelector('#languageSelect');
@@ -185,7 +181,6 @@ function filterLanguages(marshrutId){
         showGuids(idForTable);
     }
 })}
-//функция по работе с модальным окном создания заявки/ отвечает за имя гида и название маршрута
 function createApplication(clicked_id) {
     let guidId = clicked_id;
     fetch(`http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/guides/${guidId}?api_key=3998032f-4281-4dc1-a312-42ff9d880281`)
@@ -218,11 +213,9 @@ function createApplication(clicked_id) {
     })
 })
 }
-// расчет цены
 function price(clicked_id){
     let guidId = clicked_id;
     let price = Number(1);
-// Расчет надбавки от времени суток
     let timePriceOver = timePrice();
     let totalCost = document.getElementById('totalCost');
     let weekDay = document.getElementById('weekDay');
@@ -230,9 +223,7 @@ function price(clicked_id){
     let hours = document.getElementById('hourCount');
     let option1 = document.querySelector('#option1');
     let option2 = document.querySelector('#option2');
-// массив, в котором перечислены параметры, которые могут меняться, меняя итоговую стоимость
     let eventArray = [weekDay, hours, countPeople, timeAppointment, option1, option2];
-//надбавка цены с доп опциями
     let priceWithOptions;
     fetch(`http://exam-2023-1-api.std-900.ist.mospolytech.ru/api/guides/${guidId}?api_key=3998032f-4281-4dc1-a312-42ff9d880281`)
     .then(function(response){
@@ -258,7 +249,7 @@ function price(clicked_id){
                 op1 = checkedOption1();
                 op2 = checkedOption2();
                 price = (pricePerHour * hourCount * weekPrice + peoplePrice + timePriceOver);
-                priceWithOptions = price + price * op1 + price * op2;
+                priceWithOptions = price + op1 + price * op2;
                 totalCost.innerHTML = Math.floor(priceWithOptions);
                 function dataForPost(priceWithOptions) {
                     console.log(priceWithOptions);
@@ -266,7 +257,6 @@ function price(clicked_id){
         })})
     })
 }
-// Функция, которая определяет часы работы компании, не дает пользователю ввести время после 23.00 и до 9.00
 function tourTime() {
     let timeInput = document.getElementById("timeAppointment");
     let warningTime = document.querySelector("#warningTime")
@@ -279,7 +269,6 @@ function tourTime() {
             }
     }
     }
-//Расчет цены от времени суток
 function timePrice(){
     let timePriceOver = 0;
     const timeInput = document.getElementById("timeAppointment");
@@ -296,7 +285,6 @@ function timePrice(){
     }
     return timePriceOver;
 }
-// Проверка активности опции для надбавки
 function checkedOption1(){
     let option1 = document.querySelector('#option1');
     let peopleNumber = countPeople.value;
@@ -308,7 +296,6 @@ function checkedOption1(){
     }
     return option1Price;
 }
-// Проверка активности опции для надбавки
 function checkedOption2(){
     let option2 = document.querySelector('#option2');
     let peopleNumber = countPeople.value;
@@ -327,7 +314,6 @@ function checkedOption2(){
 }
 
 const holidays = ["1-1", "1-2","1-3","1-4","1-5","1-6","1-7","1-8","2-23","3-8","5-1","5-9","6-12","11-4"];
-// функция надбавки в зависимости от дня недели 
 function checkWeekDay(){
     warningAboutWeek = document.getElementById('warningData');
     dayOfWeek = new Date(weekDay.value);
@@ -348,7 +334,6 @@ function checkWeekDay(){
     }
     return weekPrice;
 }
-// функция, высчитывающая надбавку за кол-во людей
 function numberPeople() {
     let peopleNumber = countPeople.value;
     if (1 <= peopleNumber && peopleNumber < 5){
@@ -360,7 +345,6 @@ function numberPeople() {
     }
     return peoplePrice;
 }
-// Отправка заявки через POST запрос на API
 function sendApplication() {
     let dateForPost = document.getElementById('weekDay').value;
     let hoursForData = Number(document.getElementById('hourCount').value);
